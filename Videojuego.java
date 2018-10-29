@@ -12,7 +12,7 @@ public class Videojuego{
     genre = genero (edad);
     instru ();
     platform = plataforma();
-    System.out.println (platform);
+    //System.out.println (platform);
     result (edad, genre, platform);
   } //end main
 
@@ -112,22 +112,22 @@ public class Videojuego{
         if (thePlatform == 8){
           System.out.println ("Nosotros te recomendamos jugar World of Goo, The Legend of Zelda: The Wind Waker, Super Mario Galaxy 2, Super Mario Galaxy o Donkey Kong");
         }
-        if (thePlatform == 2){
+        else if (thePlatform == 2){
           System.out.println("Nosotros te recomendamos jugar World of Goo o Sonic the Hedgehog");
         }
-        if (thePlatform == 9){
+        else if (thePlatform == 9){
           System.out.println("Nosotros te recomendamos jugar World of Goo, Super Mario Odyssey o Sonic the Hedgehog");
         }
-        if ((thePlatform == 3) || (thePlatform == 11) || (thePlatform == 13) || (thePlatform == 5) || (thePlatform == 14)){
+        else if ((thePlatform == 3) || (thePlatform == 11) || (thePlatform == 13) || (thePlatform == 5) || (thePlatform == 14)){
           System.out.println("Nosotros te recomendamos jugar Sonic the Hedgehog");
         }
-        if ((thePlatform == 15) || (thePlatform == 10)){
+        else if ((thePlatform == 15) || (thePlatform == 10)){
           System.out.println("Nosotros te recomendamos jugar The Legend of Zelda: Majora's Mask, The Legend of Zelda: A Link to the Past, The Legend of Zelda: Collector's Edition o The Legend of Zelda: Ocarina of Time");
         }
-        if ((thePlatform == 4) || (thePlatform == 1)){
+        else if ((thePlatform == 4) || (thePlatform == 1)){
           System.out.println("Nosotros te recomendamos jugar Little Big Planet o Sonic the Hedgehog");
         }
-        if (thePlatform == 11){
+        else if (thePlatform == 11){
           System.out.println("Nosotros te recomendamos jugar World of Goo, Super Mario Odyssey o Sonic the Hedgehog");
         }
         else {
@@ -138,22 +138,22 @@ public class Videojuego{
         if (thePlatform == 2){
             System.out.println("Nosotros te recomendamos jugar Madden NFL 2003, NBA 2K17 o Virtua Tennis");
         }
-        if (thePlatform == 12){
+        else if (thePlatform == 12){
           System.out.println("Nosotros te recomendamos jugar Madden NFL 2003 o NFL 2K1");
         }
-        if ((thePlatform == 11) || (thePlatform == 13)){
+        else if ((thePlatform == 11) || (thePlatform == 13)){
           System.out.println("Nosotros te recomendamos jugar Madden NFL 2003, NFL 2K1 o FIFA");
         }
-        if ((thePlatform == 1) || (thePlatform == 4) || (thePlatform == 5) || (thePlatform == 14)){
+        else if ((thePlatform == 1) || (thePlatform == 4) || (thePlatform == 5) || (thePlatform == 14)){
           System.out.println("Nosotros te recomendamos jugar NBA 2K17");
         }
-        if (thePlatform == 7){
+        else if (thePlatform == 7){
           System.out.println("Nosotros te recomendamos jugar NFL 2K1");
         }
-        if ((thePlatform == 8) || (thePlatform == 6)){
+        else if ((thePlatform == 8) || (thePlatform == 6)){
           System.out.println("Nosotros te recomendamos jugar FIFA o Wii Fit");
         }
-        if ((thePlatform == 10) || (thePlatform == 15)){
+        else if ((thePlatform == 10) || (thePlatform == 15)){
           System.out.println("Nosotros te recomendamos jugar FIFA");
         }
         else {
@@ -164,7 +164,7 @@ public class Videojuego{
         if ((thePlatform == 13)){
           System.out.println("Nosotros te recomendamos jugar Forza Motorsport");
         }
-        if ((thePlatform == 11) || (thePlatform == 4) || (thePlatform == 1)){
+        else if ((thePlatform == 11) || (thePlatform == 4) || (thePlatform == 1)){
           System.out.println("Nosotros te recomendamos jugar Gran Turismo");
         }
         else {
@@ -194,7 +194,7 @@ public class Videojuego{
           System.out.println("Nosotros te recomendamos jugar Age of Empires o Civilization");
         }
 
-        if ((thePlatform == 9)){
+        else if ((thePlatform == 9)){
           System.out.println("Nosotros te recomendamos jugar Civilization");
         }
         else {
@@ -215,17 +215,17 @@ public class Videojuego{
         if ((thePlatform == 7) || (thePlatform == 2) || (thePlatform == 5)){
           System.out.println("Nosotros te recomendamos jugar SoulCalibur");
         }
-        if ((thePlatform == 14)){
+        else if ((thePlatform == 14)){
           System.out.println("Nosotros te recomendamos jugar SoulCalibur o Street Fighter");
         }
-        if ((thePlatform == 13) || (thePlatform == 11) || (thePlatform == 4) || (thePlatform == 1) || (thePlatform == 9)){
+        else if ((thePlatform == 13) || (thePlatform == 11) || (thePlatform == 4) || (thePlatform == 1) || (thePlatform == 9)){
           System.out.println("Nosotros te recomendamos jugar Street Fighter");
         }
         else {
           System.out.println ("No tenemos una recomendación para tus características");
         }
       } //Lucha
-      if (theGenre.equals("beat em up")){
+      if (theGenre.contains("beat")){
         if ((thePlatform == 2) || (thePlatform == 11) || (thePlatform == 4) || (thePlatform == 1) || (thePlatform == 14) || (thePlatform == 5)){
           System.out.println("Nosotros te recomendamos jugar Devil May Cry");
         }
@@ -261,7 +261,7 @@ public class Videojuego{
         if (thePlatform == 2){
           System.out.println ("Nosotros te recomendamos jugar Age of Empires o Civilization");
         }
-        if (thePlatform == 9){
+        else if (thePlatform == 9){
           System.out.println ("Nosotros te recomendamos jugar Civilization");
         }
         else {
@@ -286,40 +286,40 @@ public class Videojuego{
           System.out.println ("No tenemos una recomendación para tus características");
         }
       } //Lucha
-      if (theGenre.equals("beat em up")){
+      if (theGenre.contains("beat")){
         if ((thePlatform == 11) || (thePlatform == 13)){
           System.out.println("Nosotros te recomendamos jugar Grand Theft Auto: Vice City, Grand Theft Auto III o Grand Theft Auto: San Andreas");
         }
-        if ((thePlatform == 4)){
+        else if ((thePlatform == 4)){
           System.out.println("Nosotros te recomendamos jugar Batman: Arkham City, Grand Theft Auto IV o Grand Theft Auto: San Andreas");
         }
-        if ((thePlatform == 1) || (thePlatform == 6)){
+        else if ((thePlatform == 1) || (thePlatform == 6)){
           System.out.println("Nosotros te recomendamos jugar Batman: Arkham City");
         }
-        if ((thePlatform == 14)){
+        else if ((thePlatform == 14)){
           System.out.println("Nosotros te recomendamos jugar Batman: Arkham City, Grand Theft Auto IV, Grand Theft Auto V o Grand Theft Auto: San Andreas");
         }
-        if ((thePlatform == 5)){
+        else if ((thePlatform == 5)){
           System.out.println("Nosotros te recomendamos jugar Batman: Arkham City o Grand Theft Auto V");
         }
-        if ((thePlatform == 2)){
+        else if ((thePlatform == 2)){
           System.out.println("Nosotros te recomendamos jugar Batman: Arkham City, Grand Theft Auto IV, Grand Theft Auto V, Grand Theft Auto: Vice City, Grand Theft Auto III o Grand Theft Auto: San Andreas");
         }
         else {
           System.out.println ("No tenemos una recomendación para tus características");
         }
       } //beat em up
-      if (theGenre.equals("shoot em up")){
+      if (theGenre.contains("shoot")){
         if ((thePlatform == 2) || (thePlatform == 4) || (thePlatform == 5) || (thePlatform == 14)){
           System.out.println("Nosotros te recomendamos jugar Metal Gear Solid V: The Phantom Pain, Metal Gear Solid 2: Sons of Liberty o Resident Evil 4");
         }
-        if (thePlatform == 1){
+        else if (thePlatform == 1){
           System.out.println("Nosotros te recomendamos jugar Metal Gear Solid V: The Phantom Pain o Resident Evil 4");
         }
-        if (thePlatform == 11){
+        else if (thePlatform == 11){
           System.out.println("Nosotros te recomendamos jugar Metal Gear Solid 2: Sons of Liberty o Resident Evil 4");
         }
-        if (thePlatform == 12){
+        else if (thePlatform == 12){
           System.out.println("Nosotros te recomendamos jugar Resident Evil 4");
         }
         else {
@@ -342,49 +342,49 @@ public class Videojuego{
           System.out.println ("No tenemos una recomendación para tus características");
         }
       } //plataformas
-      if (theGenre.equals("first person shooting")){
+      if (theGenre.contains("first")){
         if (thePlatform == 14){
           System.out.println("Nosotros te recomendamos jugar Call of Duty: Modern Warfare 2, BioShock Infinite, BioShock, The Orange Box, Half-life 2, Halo: Combat Evolved, Perfect Dark, Battlefield o Doom");
         }
-        if (thePlatform == 5){
+        else if (thePlatform == 5){
           System.out.println("Nosotros te recomendamos jugar BioShock Infinite, BioShock, Wolfstein II: The New Colossus, Halo 2, Halo: Combat Evolved, Perfect Dark, Battlefield o Doom");
         }
-        if (thePlatform == 13){
+        else if (thePlatform == 13){
           System.out.println("Nosotros te recomendamos jugar Halo 2, Half-life 2, Halo: Combat Evolved, Battlefield o Doom");
         }
-        if (thePlatform == 11){
+        else if (thePlatform == 11){
           System.out.println("Nosotros te recomendamos jugar Half-Life o Battlefield");
         }
-        if (thePlatform == 4){
+        else if (thePlatform == 4){
           System.out.println("Nosotros te recomendamos jugar Call of Duty: Modern Warfare 2, BioShock Infinite, BioShock, The Orange Box, Half-life 2, Battlefield o Doom");
         }
-        if (thePlatform == 1){
+        else if (thePlatform == 1){
           System.out.println("Nosotros te recomendamos jugar BioShock Infinite, BioShock, Wolfenstein II: The New Colossus, Battlefield o Doom");
         }
-        if (thePlatform == 2){
+        else if (thePlatform == 2){
           System.out.println("Nosotros te recomendamos jugar Call of Duty: Modern Warfare 2, BioShock Infinite, BioShock, Wolfenstein, The Orange Box, Half-life 2, Half-life, Halo: Combat Evolved, Halo 2, Battlefield o Doom");
         }
-        if (thePlatform == 15){
+        else if (thePlatform == 15){
           System.out.println("Nosotros te recomendamos jugar Golden Eye 007, Perfect Dark o Doom");
         }
-        if ((thePlatform == 12) || (thePlatform == 8)){
+        else if ((thePlatform == 12) || (thePlatform == 8)){
           System.out.println("Nosotros te recomendamos jugar Metroid Prime");
         }
         else {
           System.out.println ("No tenemos una recomendación para tus características");
         }
       } //fps
-      if (theGenre.equals("third person shooting")){
+      if (theGenre.contains("third")){
         if (thePlatform == 2){
           System.out.println("Nosotros te recomendamos jugar World of Warcraft");
         }
-        if (thePlatform == 4){
+        else if (thePlatform == 4){
           System.out.println("Nosotros te recomendamos jugar The Last of Us, Read Dead Redemption o Uncharted 2: Among Thieves");
         }
-        if (thePlatform == 1){
+        else if (thePlatform == 1){
           System.out.println("Nosotros te recomendamos jugar The Last of Us o Uncharted 2: Among Thieves");
         }
-        if (thePlatform == 14){
+        else if (thePlatform == 14){
           System.out.println("Nosotros te recomendamos jugar Read Dead Redemption");
         }
         else {
@@ -395,16 +395,16 @@ public class Videojuego{
         if (thePlatform == 2){
           System.out.println("Nosotros te recomendamos jugar Baldur's Gate II: Shadows of Amn, The Elder Scrolls V: Skyrim, Dark Souls o Neverwinter Nights");
         }
-        if ((thePlatform == 5) || (thePlatform == 1)){
+        else if ((thePlatform == 5) || (thePlatform == 1)){
           System.out.println("Nosotros te recomendamos jugar The Elder Scrolls V: Skyrim o Dark Souls");
         }
-        if ((thePlatform == 14) || (thePlatform == 4)){
+        else if ((thePlatform == 14) || (thePlatform == 4)){
           System.out.println("Nosotros te recomendamos jugar The Elder Scrolls V: Skyrim, Mass Effects 2 o Dark Souls");
         }
-        if (thePlatform == 6){
+        else if (thePlatform == 6){
           System.out.println("Nosotros te recomendamos jugar The Legend of Zelda: Breath of the Wild");
         }
-        if (thePlatform == 9){
+        else if (thePlatform == 9){
           System.out.println("Nosotros te recomendamos jugar The Legend of Zelda: Breath of the Wild o Dark Souls");
         }
         else {
@@ -423,7 +423,7 @@ public class Videojuego{
         if (thePlatform == 11){
           System.out.println("Nosotros te recomendamos jugar Tony Hawk's Pro Skater 3");
         }
-        if ((thePlatform == 11) || (thePlatform == 13) || (thePlatform == 15) || (thePlatform == 2)){
+        else if ((thePlatform == 11) || (thePlatform == 13) || (thePlatform == 15) || (thePlatform == 2)){
           System.out.println("Nosotros te recomendamos jugar Tony Hawk's Pro Skater 3 o Tony Hawk's Pro Skater 2");
         }
         else {
