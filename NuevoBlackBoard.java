@@ -20,7 +20,7 @@ public class NuevoBlackBoard{
       System.out.println ("7. Ordenar matrículas de algún grupo de manera ascendente\n 8. Revisar si un grupo de matrículas perteneces parcial o por completo a alguno de los dos grupos\n 9. Salir del nuevo Blackboard para profesores");
       System.out.println ("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
       opcion = kb.nextInt();
-9      grupo2= new String [size2];
+      grupo2= new String [size2];
       grupo1= new String [size1];
       size3=size1+size2;
       sumaGrupo = new String [size3];
