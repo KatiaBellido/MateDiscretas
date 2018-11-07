@@ -20,17 +20,19 @@ public class NuevoBlackBoard{
       System.out.println ("7. Ordenar matrículas de algún grupo de manera ascendente\n 8. Revisar si un grupo de matrículas perteneces parcial o por completo a alguno de los dos grupos\n 9. Salir del nuevo Blackboard para profesores");
       System.out.println ("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
       opcion = kb.nextInt();
-      grupo2= new String [size2];
-      grupo1= new String [size1];
+      grupo2= new String [100];
+      grupo1= new String [100];
       size3=size1+size2;
-      sumaGrupo = new String [size3];
+      sumaGrupo = new String [200];
       switch (opcion) {
         case 1: System.out.println("¿Cuántos alumnos tienes en tu primer grupo?");
         size1 = kb.nextInt();
-        grupo1= new String [size1];
         System.out.println ("Ingresa las matrículas del primer grupo");
         for (counter=0; counter < size1; counter++ ) {
           grupo1[counter]= kb.next();
+        }
+        for (counter=0;counter<size1 ;counter++ ) {
+          System.out.println(grupo1[counter]);
         }
         break;
         //
@@ -43,12 +45,17 @@ public class NuevoBlackBoard{
         }
         break;
         //
-        case 3: size3=(size1+size2);
+        case 3:
+        for (counter=0;counter<size1 ;counter++ ) {
+          System.out.println(grupo1[counter]);
+        }
+        size3=(size1+size2);
         if (size3==0) {
           System.out.println("Creo que no creaste los grupos :D");
         }
         for (counter=0, counter2=0; counter < size1; counter++ ) {
             sumaGrupo[counter]= grupo1[counter2];
+            System.out.print(grupo1[counter2]);
             counter2++;
         }// no se nada :(
         for (counter=size1,counter3=0;counter < size3 ; counter++ ) {
@@ -61,7 +68,7 @@ public class NuevoBlackBoard{
         break;
         //
         case 7:
-        System.out.println("Cual grupo quieres emparejar?")
+        System.out.println("Cual grupo quieres emparejar?");
         eleccion7= kb.nextInt();
         if (eleccion7==1) {
 
@@ -70,7 +77,7 @@ public class NuevoBlackBoard{
 
         }
         else {
-          System.out.println("Solo tienes dos grupos, porfa date cuenta")
+          System.out.println("Solo tienes dos grupos, porfa date cuenta");
         }
         break;
         //
