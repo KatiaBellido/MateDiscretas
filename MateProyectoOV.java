@@ -1,7 +1,6 @@
 import java.util.*;
 public class MateProyectoOV{
   public static void main(String[] args) {
-    //variables
     String inicio="", laPersonalidad="", carrera="",carrera1="",carrera2="",carrera3="", respuesta="", carreraFinal="";
     Scanner keyboard= new Scanner(System.in);
 
