@@ -8,11 +8,15 @@ public class NuevoBlackBoard2{
     String[] grupo1;
     String[] grupo2;
     String[] sumaGrupo;
+    String[] matriculasIguales;
+    String[] matriculasIgualesSin;
     grupo2= new String [100];
     grupo1= new String [100];
     sumaGrupo = new String [200];
+    matriculasIguales=new String [200];
+    matriculasIgualesSin= new String[200];
     String algo="";
-    int counter = 0,counter2=0, counter3=0, opcion=0, size1 = 0, size2 = 0, size3=0;
+    int counter = 0,counter2=0, counter3=0, opcion=0, size1 = 0, size2 = 0, size3=0, size4=0;
     int eleccion7=0;
 
     while (opcion != 9){
@@ -58,7 +62,7 @@ public class NuevoBlackBoard2{
             counter2++;
         }// no se nada :(
         for (counter=size1,counter3=0;counter < size3 ; counter++ ) {
-          sumaGrupo[counter]= grupo1[counter3];
+          sumaGrupo[counter]= grupo2[counter3];
           counter3++;
         }//ends for
         for (counter=0;counter<size3 ;counter++ ) {
@@ -66,16 +70,51 @@ public class NuevoBlackBoard2{
         }
       }// termina opcion3
       if (opcion==4) {
-        System.out.print("{");
-        for (counter=0;counter<size1 ; counter++) {
-          System.out.print(grupo1[counter]);
-        }
-        System.out.print("}");
-        System.out.print("{");
-        for (counter=0;counter<size2 ;counter++ ) {
-          System.out.print(grupo2[counter]);
-        }
-        System.out.print("}");
+        if (size1>size2) {
+          for (counter=0,size4=0;counter<size1 ;counter++ ) {
+            for (counter2=0;counter2<size2 ;counter2++ ) {
+              if (grupo1[counter].equals(grupo2[counter2])) {
+                matriculasIguales[size4]=grupo1[counter];
+                System.out.print("^"+matriculasIguales[counter]);
+                size4++;
+              }//
+            }//termina for nested
+            if (size4==0) {
+              System.out.print("ninguna");
+            }
+          }//termina for :D
+        }//termina if nested
+        else if (size2>size1) {  //esta parte esta arriba el primer if todavía nop:D
+          System.out.println("estas son las matrículas que aparecen en los dos grupos: ");
+          for (counter=0,size4=0;counter<size2 ;counter++ ) {
+            for (counter2=0;counter2<size1 ;counter2++ ) {
+              if (grupo1[counter2].equals(grupo2[counter])) {
+                matriculasIguales[size4]=grupo2[counter];
+                  System.out.print("^"+matriculasIguales[size4]);
+                size4++;
+              }//
+            }//termina for nested
+            if (size4==0) {
+              System.out.print("ninguna");
+            }
+          }//termina for :D
+        }//termina else if
+        else if (size2=size1) {
+            System.out.println("estas son las matrículas que aparecen en los dos grupos: ");
+            for (counter=0,size4=0;counter<size2 ;counter++ ) {
+              for (counter2=0;counter2<size1 ;counter2++ ) {
+                if (grupo1[counter2].equals(grupo2[counter])) {
+                  matriculasIguales[size4]=grupo2[counter];
+                    System.out.print("^"+matriculasIguales[size4]);
+                  size4++;
+                }//
+              }//termina for nested
+              if (size4==0) {
+                System.out.print("ninguna");
+              }
+            }//termina for :D
+        }//termina else 2
+
       }//termina if opcion4
       if (opcion==7) {
         System.out.println("Cual grupo quieres emparejar?");
