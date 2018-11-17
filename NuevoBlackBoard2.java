@@ -7,6 +7,7 @@ public class NuevoBlackBoard2{
     Scanner kb = new Scanner (System.in);
     String[] grupo1;
     String[] grupo2;
+    String[] nuevogrupo;
     String[] sumaGrupo;
     String[] matriculasIguales;
     String[][] matriculasEquipos;
@@ -14,6 +15,7 @@ public class NuevoBlackBoard2{
     int[] matriculasSinA;
     grupo2= new String [100];
     grupo1= new String [100];
+    nuevogrupo=new String[100];
     sumaGrupo = new String [200];
     matriculasIguales=new String [200];
     matriculasEquipos= new String [100][100];
@@ -21,7 +23,7 @@ public class NuevoBlackBoard2{
 
     String algo="",sinA="";
     int counter = 0,counter2=0, counter3=0, opcion=0, size1 = 0, size2 = 0, size3=0, size4=0;
-    int eleccion5=0, eleccion7=0, integrantes=0, matrisinA=0;
+    int eleccion5=0, eleccion7=0,eleccion8=0, integrantes=0, matrisinA=0, sizeNuevo=0, existe1=0;
     double sub=0.0;
 
     while (opcion != 9){
@@ -234,6 +236,34 @@ public class NuevoBlackBoard2{
           System.out.println("Solo tienes dos grupos, porfa date cuenta");
         }
       }//termina opcion7
+
+      if (opcion==8) {
+        System.out.println("Cuántas matrículas vas a comparar?");
+        sizeNuevo=kb.nextInt();
+        System.out.println ("Ingresa las matriculas del grupo a comparar");
+        for (counter=0; counter < sizeNuevo; counter++ ) {
+          nuevogrupo[counter]= kb.next();
+        }//termina for
+        System.out.println("¿con cual grupo quieres comparar?(escribe uno o dos)");
+        //ahora toca comparar
+        if (eleccion8==1) {
+
+          for (counter=0;counter<sizeNuevo; counter++) {
+            for (counter2=0; counter2<size1;counter2++ ) {
+              if (nuevogrupo[counter].equals(grupo1[counter2])) {
+                existe1++;
+              }//termina if
+            }//termina for nested
+          }//termina for
+          if (existe1==sizeNuevo) {
+            System.out.println("Tu nuevo grupo pertenece totalmente al grupo 1");
+          }
+          else if (existe1<sizeNuevo) {
+            System.out.println("Tu nuevo grupo pertenece parcialmente al grupo 1 porque tiene "+existe1+" matrículas parecidas");
+          }
+        }
+
+      }//termina opcion 8
 
     } //fin while
   } //fin main
