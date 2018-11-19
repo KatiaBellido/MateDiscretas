@@ -23,7 +23,7 @@ public class NuevoBlackBoard2{
 
     String algo="",sinA="";
     int counter = 0,counter2=0, counter3=0, opcion=0, size1 = 0, size2 = 0, size3=0, size4=0;
-    int eleccion5=0, eleccion7=0,eleccion8=0, integrantes=0, matrisinA=0, sizeNuevo=0, existe1=0;
+    int eleccion5=0, eleccion7=0,eleccion8=0, integrantes=0, matrisinA=0, sizeNuevo=0, existe1=0,existe2=0;
     double sub=0.0;
 
     while (opcion != 9){
@@ -244,24 +244,50 @@ public class NuevoBlackBoard2{
         for (counter=0; counter < sizeNuevo; counter++ ) {
           nuevogrupo[counter]= kb.next();
         }//termina for
-        System.out.println("¿con cual grupo quieres comparar?(escribe uno o dos)");
-        //ahora toca comparar
-        if (eleccion8==1) {
 
           for (counter=0;counter<sizeNuevo; counter++) {
             for (counter2=0; counter2<size1;counter2++ ) {
               if (nuevogrupo[counter].equals(grupo1[counter2])) {
                 existe1++;
+                System.out.println("Tu matrícula: "+grupo1[counter2]+", pertenece al grupo 1");
+              }//termina if
+
+            }//termina for nested
+          }//termina for
+
+          for (counter=0;counter<sizeNuevo; counter++) {
+            for (counter2=0; counter2<size2;counter2++ ) {
+              if (nuevogrupo[counter].equals(grupo2[counter2])) {
+                existe2++;
+                System.out.println("Tu matrícula: "+grupo2[counter2]+" pertenece al grupo 2");
               }//termina if
             }//termina for nested
           }//termina for
-          if (existe1==sizeNuevo) {
-            System.out.println("Tu nuevo grupo pertenece totalmente al grupo 1");
+
+
+          if (existe1>existe2 && existe1==sizeNuevo) {
+              System.out.println("Tu grupo pertenece por completo al grupo 1 ");
           }
-          else if (existe1<sizeNuevo) {
-            System.out.println("Tu nuevo grupo pertenece parcialmente al grupo 1 porque tiene "+existe1+" matrículas parecidas");
+          else if (existe2>existe1 && existe2==sizeNuevo) {
+            System.out.println("Tu grupo pertenece por completo al grupo 2 ");
           }
-        }
+          else if (existe1==existe2 && existe1==sizeNuevo) {
+            System.out.println("Tu grupo pertenece por completo a ambos grupos");
+          }
+          else if (existe1<sizeNuevo && existe1>existe2) {
+            System.out.println("Tu grupo pertenece parcialmente al grupo 1 por que tiene en común "+existe1+" matrículas");
+          }
+          else if (existe2<sizeNuevo && existe2>existe1) {
+            System.out.println("Tu grupo pertenece parcialmente al grupo 2 por que tiene en común "+existe2+" matrículas");
+          }
+          else if (existe2<sizeNuevo && existe1<sizeNuevo) {
+            System.out.println("Tu grupo pertenece parcialmente a ambos grupos debido a que tiene "+existe1+" matrículas en común del grupo 1 y "+existe2+" matrículas en común con el grupo 2");
+          }
+
+          existe1=0;
+          existe2=0;
+
+
 
       }//termina opcion 8
 
