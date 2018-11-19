@@ -3,6 +3,8 @@ import java.util.*;
 Noviembre 6, 2018
 Segundo proyecto mates discretas*/
 public class NuevoBlackBoard2{
+  public static int contLista = 0;
+  public static String[] listaPalabras = new String[1000];
   public static void main (String[] args){
     Scanner kb = new Scanner (System.in);
     String[] grupo1;
@@ -146,7 +148,13 @@ public class NuevoBlackBoard2{
         } //termina if primer grupo
         if (eleccion5==2){
           sub = Math.pow(2, size2-1);
+          System.out.println ("vacío");
+          for (counter2=1;counter2<=size2 ;counter2++) {
+            Perm2(grupo2, "",counter2, size2);
+          }
+
         } //termina if segundo grupo
+        contLista = 0;
       } //termina opcion 5
 
       if (opcion==6){
@@ -225,7 +233,7 @@ public class NuevoBlackBoard2{
           }//termina for
           Arrays.sort(matriculasSinA);
           System.out.println(Arrays.toString(matriculasSinA));
-        
+
         }
         else {
           System.out.println("Solo tienes dos grupos, porfa date cuenta");
@@ -288,15 +296,45 @@ public class NuevoBlackBoard2{
 
     } //fin while
   } //fin main
-  public static void Perm2(String[] elem, String act, int n, int r) {
-        if (n == 0) {
-            System.out.println(act);
-        } else {
-            for (int i = 0; i < r; i++) {
-                if (!act.contains(elem[i])) { // Controla que no haya repeticiones
-                    Perm2(elem, act + elem[i] + ", ", n - 1, r);
-                }
-            }
-        }
-    }
+  public static void Perm2(String[] elem, String act, int n, int r)
+  {
+      if (n == 0)
+      {
+          if(!repeated(act))
+          {
+              listaPalabras[contLista] = act;
+              contLista++;
+              System.out.println(act);
+          }
+      }
+      else
+      {
+          for (int i = 0; i < r; i++)
+          {
+              if (!act.contains(elem[i]))
+              { // Controla que no haya repeticiones
+                  Perm2(elem, act + elem[i] + ",", n - 1, r);
+              }
+          }
+      }
+  }
+  public static boolean repeated(String combinacion)
+  {
+      int i=0;
+      int cont = 0;
+      String[]elems = combinacion.split(",");
+      for (int j = 0; j < contLista; j++)
+      {
+          for(i = 0; i < elems.length; i++)
+          {
+              if(listaPalabras[j].contains(elems[i]))
+                  cont++;
+          }
+          if(cont == elems.length)
+              return true;
+          else
+              cont = 0;
+      }
+      return false;
+  }
 } //fin class
