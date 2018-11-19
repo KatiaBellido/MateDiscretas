@@ -212,9 +212,6 @@ public class NuevoBlackBoard2{
           }//termina for
           Arrays.sort(matriculasSinA);
           System.out.println(Arrays.toString(matriculasSinA));
-          for (counter=0;counter<size1 ;counter++ ) {
-          System.out.println(matriculasSinA[counter]);
-          }
 
         }//termina if
         else if(eleccion7==2) {
@@ -228,9 +225,7 @@ public class NuevoBlackBoard2{
           }//termina for
           Arrays.sort(matriculasSinA);
           System.out.println(Arrays.toString(matriculasSinA));
-          for (counter=0;counter<size2 ;counter++ ) {
-          System.out.println(matriculasSinA[counter]);
-          }
+        
         }
         else {
           System.out.println("Solo tienes dos grupos, porfa date cuenta");
