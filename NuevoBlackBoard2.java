@@ -25,7 +25,7 @@ public class NuevoBlackBoard2{
 
     String algo="",sinA="";
     int counter = 0,counter2=0, counter3=0, opcion=0, size1 = 0, size2 = 0, size3=0, size4=0;
-    int eleccion5=0, eleccion7=0,eleccion8=0, integrantes=0, matrisinA=0, sizeNuevo=0, existe1=0,existe2=0;
+    int eleccion5=0, eleccion7=0,eleccion8=0, integrantes=0, matrisinA=0, sizeNuevo=0, existe1=0,existe2=0, mayor=0;
     double sub=0.0;
 
     while (opcion != 9){
@@ -218,9 +218,18 @@ public class NuevoBlackBoard2{
               matriculasSinA[counter]=matrisinA;
 
           }//termina for
-          Arrays.sort(matriculasSinA);
-          System.out.println(Arrays.toString(matriculasSinA));
-
+          for (counter=0; counter<matriculasSinA.length; counter++){
+            for (counter2=1; counter2<(matriculasSinA.length-counter); counter2++) {
+              if (matriculasSinA[counter2-1]>matriculasSinA[counter2]){
+                mayor = matriculasSinA[counter2-1];
+                matriculasSinA[counter2-1]=matriculasSinA[counter2];
+                matriculasSinA[counter2]=mayor;
+              } //end if
+            } //end for nested
+          } //end for
+          for (counter=0; counter<matriculasSinA.length; counter++){
+            System.out.println ("*"+matriculasSinA[counter]);
+          } //end for print
         }//termina if
         else if(eleccion7==2) {
           matriculasSinA= new int [size2];
@@ -231,9 +240,18 @@ public class NuevoBlackBoard2{
               matriculasSinA[counter]=matrisinA;
 
           }//termina for
-          Arrays.sort(matriculasSinA);
-          System.out.println(Arrays.toString(matriculasSinA));
-
+          for (counter=0; counter<matriculasSinA.length; counter++){
+            for (counter2=1; counter2<(matriculasSinA.length-counter); counter2++) {
+              if (matriculasSinA[counter2-1]>matriculasSinA[counter2]){
+                mayor = matriculasSinA[counter2-1];
+                matriculasSinA[counter2-1]=matriculasSinA[counter2];
+                matriculasSinA[counter2]=mayor;
+              } //end if
+            } //end for nested
+          } //end for
+          for (counter=0; counter<matriculasSinA.length; counter++){
+            System.out.println ("*"+matriculasSinA[counter]);
+          } //end for print
         }
         else {
           System.out.println("Solo tienes dos grupos, porfa date cuenta");
