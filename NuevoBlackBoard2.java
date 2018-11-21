@@ -32,8 +32,8 @@ public class NuevoBlackBoard2{
       System.out.println ("---------------------------------------------");
       System.out.println ("Hola, este es el nuevo Blackboard para profesores. Estas son nuestras opciones: (Eliga el número de opción que quieras efectuar)");
       System.out.println ("---------------------------------------------");
-      System.out.println ("1. Ingresa matrículas del primer grupo\n2. Ingresa matrículas del segundo grupo\n3. Generar grupo con los dos grupos");
-      System.out.println ("4. Generar grupo con los alumnos en ambos grupos\n5. Mostrar todos los equipos posibles en el grupo\n6. Generar todas las parejas de estudio posibles entre ambos grupos");
+      System.out.println ("1. Ingresa matrículas del primer grupo\n2. Ingresa matrículas del segundo grupo\n3. Generar grupo con los alumnos en ambos grupos");
+      System.out.println ("4. Generar grupo con los dos grupos\n5. Mostrar todos los equipos posibles en el grupo\n6. Generar todas las parejas de estudio posibles entre ambos grupos");
       System.out.println ("7. Ordenar matrículas de algún grupo de manera ascendente\n8. Revisar si un grupo de matrículas perteneces parcial o por completo a alguno de los dos grupos\n9. Salir del nuevo Blackboard para profesores");
       System.out.println ("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
       opcion = kb.nextInt();
@@ -66,25 +66,6 @@ public class NuevoBlackBoard2{
       }//ends else if opcion 2
 
       if (opcion==3) {
-
-        size3=(size1+size2);
-        if (size3==0) {
-          System.out.println("Creo que no creaste los grupos :D");
-        }
-        for (counter=0, counter2=0; counter < size1; counter++ ) {
-            sumaGrupo[counter]= grupo1[counter2];
-            counter2++;
-        }// no se nada :(
-        for (counter=size1,counter3=0;counter < size3 ; counter++ ) {
-          sumaGrupo[counter]= grupo2[counter3];
-          counter3++;
-        }//ends for
-        for (counter=0;counter<size3 ;counter++ ) {
-          System.out.println("-"+sumaGrupo[counter]);
-        }
-      }// termina opcion3
-
-      if (opcion==4) {
         if (size1>size2) {
         System.out.println (" "); //espacio en blanco
          System.out.println("Estas son las matrículas que aparecen en los dos grupos: ");
@@ -132,8 +113,38 @@ public class NuevoBlackBoard2{
               }
             }//termina for :D
         }//termina else 2
+      }//termina if opcion3
 
-      }//termina if opcion4
+      if (opcion==4) {
+        size3=(size1+size2);
+        if (size3==0) {
+          System.out.println("Creo que no creaste los grupos :D");
+        }
+        for (counter=0, counter2=0; counter < size1; counter++ ) {
+            sumaGrupo[counter]= grupo1[counter2];
+            counter2++;
+        }// no se nada :(
+        for (counter=size1,counter3=0;counter < size3 ; counter++ ) {
+          sumaGrupo[counter]= grupo2[counter3];
+          counter3++;
+        }//ends for
+
+        for (counter=0; counter<size3; counter++) {
+          for (counter2=0; counter2<size4; counter2++) {
+            if (sumaGrupo[counter].equals(matriculasIguales[counter2])){
+              sumaGrupo[counter]=" ";
+            } //end if
+          } //end for nested
+        } //end for
+        for (counter=0;counter<size3;counter++ ) {
+          if (sumaGrupo[counter]!=" "){
+            System.out.println("-"+sumaGrupo[counter]);
+          } //termina if
+        }// termina for
+        for (counter=0; counter<size4; counter++) {
+          System.out.println("-"+matriculasIguales[counter]);
+        }
+      } //termina opcion4
 
       if (opcion==5){
         System.out.println ("¿De que grupo quieres formar los equipos?");
@@ -158,7 +169,6 @@ public class NuevoBlackBoard2{
       } //termina opcion 5
 
       if (opcion==6){
-
         if (size1>size2) {
           for (counter=0;counter<size1 ;counter++ ) {
             for (counter2=0;counter2<size2 ;counter2++ ) {
@@ -167,11 +177,7 @@ public class NuevoBlackBoard2{
                 System.out.print(grupo2[counter2]);
                 System.out.println(" ");
               }//
-
-
             }//termina for nested
-
-
           }//termina for :D
         }//termina if nested
         else if (size2>size1) {  //esta parte esta arriba el primer if todavía nop:D
@@ -182,10 +188,8 @@ public class NuevoBlackBoard2{
                 System.out.print(grupo1[counter2]);
                 System.out.print(grupo2[counter]);
                 System.out.println(" ");
-              }//
-
+              }//termina if
             }//termina for nested
-
           }//termina for :D
         }//termina else if
         else if (size2==size1) {
@@ -196,12 +200,10 @@ public class NuevoBlackBoard2{
                   System.out.print(grupo1[counter2]);
                   System.out.print(grupo2[counter]);
                   System.out.println(" ");
-                }//
+                }//termina if
               }//termina for nested
-
             }//termina for :D
         }//termina else 2
-
       } //termina opcion 6
 
       if (opcion==7) {
@@ -238,7 +240,6 @@ public class NuevoBlackBoard2{
               nuevo= sinA.replace("a","1");
               matrisinA= Integer.parseInt(nuevo);
               matriculasSinA[counter]=matrisinA;
-
           }//termina for
           for (counter=0; counter<matriculasSinA.length; counter++){
             for (counter2=1; counter2<(matriculasSinA.length-counter); counter2++) {
@@ -311,40 +312,30 @@ public class NuevoBlackBoard2{
 
 
       }//termina opcion 8
-
     } //fin while
   } //fin main
-  public static void Perm2(String[] elem, String act, int n, int r)
-  {
-      if (n == 0)
-      {
-          if(!repeated(act))
-          {
+  public static void Perm2(String[] elem, String act, int n, int r){
+      if (n == 0){
+          if(!repeated(act)){
               listaPalabras[contLista] = act;
               contLista++;
               System.out.println(act);
           }
       }
-      else
-      {
-          for (int i = 0; i < r; i++)
-          {
-              if (!act.contains(elem[i]))
-              { // Controla que no haya repeticiones
+      else{
+          for (int i = 0; i < r; i++){
+              if (!act.contains(elem[i])){ // Controla que no haya repeticiones
                   Perm2(elem, act + elem[i] + ",", n - 1, r);
               }
           }
       }
   }
-  public static boolean repeated(String combinacion)
-  {
+  public static boolean repeated(String combinacion) {
       int i=0;
       int cont = 0;
       String[]elems = combinacion.split(",");
-      for (int j = 0; j < contLista; j++)
-      {
-          for(i = 0; i < elems.length; i++)
-          {
+      for (int j = 0; j < contLista; j++){
+          for(i = 0; i < elems.length; i++){
               if(listaPalabras[j].contains(elems[i]))
                   cont++;
           }
